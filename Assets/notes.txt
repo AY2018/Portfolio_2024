@@ -1,0 +1,21 @@
+// Project Page :
+
+For each project = 
+
+Description of the project, skills I used/Learn
+
+Add Images
+
+Bottom of page = other projects
+
+
+// Ongoing project 
+
+Short term : 
+- League of legends portfolio website 
+
+
+Long term : 
+- Build a payment gateway + admin dashboard for a football club
+- Build a blog deployment plateform for said website. 
+- Improve the beta version (in collaboration with Onissep)

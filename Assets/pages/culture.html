@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <link rel="stylesheet" href="../styles/revisions.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <title>Ayoub Kahfy | Culture Num</title>
+  </head>
+  <body>
+    <header>
+      <a href="#"><span>./</span>Ayoub Kahfy</a>
+      <i class="fa-solid fa-bars" onclick="slideIn()"></i>
+      <nav>
+        <i class="fa-solid fa-x" onclick="fadeOut()"></i>
+        <ul>
+          <li>
+            <a href="revisions.html">// Révisions</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <article class="articleFolders">
+      <h1>CULTURE NUM</h1>
+
+      <h2>CM</h2>
+      <section class="galleryFolders">
+        <a class="folderCard" href="./dialogue.html">
+          <i class="fa-solid fa-folder"></i>
+          <h2>DIALOGUE</h2>
+        </a>
+        <a class="folderCard" href="./fiche1.html">
+          <i class="fa-solid fa-folder"></i>
+          <h2>FICHE DE RÉVISION 1</h2>
+        </a>
+        <a class="folderCard" href="./fiche2.html">
+          <i class="fa-solid fa-folder"></i>
+          <h2>FICHE DE RÉVISION 2</h2>
+        </a>
+      </section>
+
+      <hr />
+      <h2>TD/TP</h2>
+      <section class="galleryFolders">
+        <a class="folderCard" href="./td1.html">
+          <i class="fa-solid fa-folder"></i>
+          <h2>TD1</h2>
+        </a>
+        <a class="folderCard" href="./td2.html">
+          <i class="fa-solid fa-folder"></i>
+          <h2>TD2</h2>
+        </a>
+        <a class="folderCard" href="./td3.html">
+          <i class="fa-solid fa-folder"></i>
+          <h2>TD3</h2>
+        </a>
+        <a class="folderCard" href="./td4.html">
+          <i class="fa-solid fa-folder"></i>
+          <h2>TD4</h2>
+        </a>
+      </section>
+    </article>
+
+    <footer>
+      <p>© AYOUB KAHFY 2023</p>
+    </footer>
+
+    <script>
+      let nav = document.querySelector('nav');
+
+      let li = document.querySelectorAll('.navLI');
+
+      for (let i = 0; i < li.length; i++) {
+        li[i].addEventListener('click', fadeOut);
+      }
+
+      function fadeOut() {
+        nav.style.left = '-100%';
+      }
+
+      function slideIn() {
+        nav.style.left = '0';
+      }
+    </script>
+  </body>
+</html>
