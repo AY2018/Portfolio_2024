@@ -1,4 +1,43 @@
+ document.addEventListener("DOMContentLoaded", function() {
+    // Event listener for project cells
+    var projectCells = document.querySelectorAll('.projectCell');
+    projectCells.forEach(function(cell) {
+        cell.addEventListener('click', function() {
+            var projectId = this.getAttribute('data-project');
+            var projectArticle = document.getElementById(projectId);
+            
+            // Hide all projectInfo articles
+            document.querySelectorAll('.projectInfo').forEach(function(article) {
+                article.classList.remove('projectAppear');
+            });
+
+            // Show the clicked project's info article
+            if (projectArticle) {
+                projectArticle.classList.add('projectAppear');
+            }
+        });
+    });
+
+    // Event listener for 'x' icon in projectInfo articles
+    var closeIcons = document.querySelectorAll('.projectInfo .fa-xmark');
+    closeIcons.forEach(function(icon) {
+        icon.addEventListener('click', function() {
+            this.parentElement.classList.remove('projectAppear');
+        });
+    });
+
+    // Event listener for links at the end of projectInfo articles
+    var projectLinks = document.querySelectorAll('.projectInfo a');
+    projectLinks.forEach(function(link) {
+        link.addEventListener('click', function() {
+            this.closest('.projectInfo').classList.remove('projectAppear');
+        });
+    });
+});
+
 // Typing animation
+
+
 const textContainer = document.getElementById('text-container');
         const sentences = [
             "Hey",
@@ -63,4 +102,6 @@ function slideIn(){
     nav.style.left = "0";
 
 }
+
+
 

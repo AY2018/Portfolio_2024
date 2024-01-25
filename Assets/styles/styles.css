@@ -60,7 +60,7 @@ header{
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 10;
+    z-index: 9999;
 }
 
 
@@ -269,6 +269,7 @@ article{
 /* Project Library */
 
 .projectsLibrary{
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -277,6 +278,144 @@ article{
     flex-wrap: wrap;
 }
 
+.projectInfo{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #202124;
+    z-index: 99;
+    width: 100%;
+    height: 100%;
+    box-shadow: 1px 1px 10px black;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    color: white;
+    opacity: 0;
+    z-index: -10;
+    transition: opacity 0.5s ease-in 0.1s, z-index 0.1s ease;
+scrollbar-color: #ffffff30 transparent;
+}
+
+#projectInfo::-webkit-scrollbar {
+    background-color: transparent;
+    width: 5px;
+}
+
+#projectInfo::-webkit-scrollbar-thumb {
+    background-color: #ffffff30;
+    border-radius: 10px;
+}
+
+.projectAppear{
+    opacity: 1;
+    z-index: 99;
+}
+
+.projectDisappear {
+    opacity: 0;
+    z-index: -10;
+}
+.projectInfo .fa-xmark{
+    position: absolute;
+    right: 5%;
+    top: 40px;
+    font-size: 2rem;
+    cursor: pointer;
+}
+.projectInfo .row{
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.projectInfo .row section, .projectInfo .row figure{
+    width: 50%;
+}
+.projectInfo .row section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: left;
+}
+
+.projectInfo .row section h3{font-size: 2rem;}
+
+.projectInfo .row ul{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.projectInfo .row ul li{
+    padding: 10px;
+    border-radius: 25px;
+    background-color: red;
+    height: fit-content;
+    text-wrap: nowrap;
+    text-align: center;
+}
+
+.ulTextBloc{
+    width: 100% !important;
+}
+
+.projectInfo h2{
+font-size: 3rem;
+}
+
+#Massy h2{
+    color: #b9a46a;
+    
+}
+
+#Massy ul li{
+    background-color: #b9a46a;
+}
+
+#Webdoc h2{
+    color: #4d2565;
+    filter: brightness(2);
+}
+
+#Webdoc ul li{
+    background-color: #4d2565;
+}
+
+#Datavis h2{
+    color: #770504;
+    filter: brightness(2);
+}
+
+#Datavis ul li{
+    background-color: #770504;
+    filter: brightness(2);
+}
+
+#Sae h2{
+    color: #b10000;
+}
+
+#Sae ul li{
+    background-color: #b10000;
+}
+
+.projectInfo a {
+    padding: 16px 32px;
+    border-radius: 10px;
+    color: white;
+    background-color: #938ddc;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: 0.2s ease-in;
+}
+
+
+.projectInfo a:hover{
+    filter: brightness(0.8);
+}
 
 .projectCell{
     width: 45%;
@@ -284,6 +423,7 @@ article{
     flex-direction: column;
     gap: 20px;
     align-items: center;
+    cursor: pointer;
 }
 
 .projectCell figure .fa-info{
@@ -485,6 +625,18 @@ footer{
     .onGoingText h1 {
         left: 80%;
     }
+
+        .projectInfo .row {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            flex-direction: column;
+        }
+
+                .projectInfo .row section,
+                .projectInfo .row figure {
+                    width: 100%;
+                }
 }
 
 @media (max-width: 969px){
@@ -503,6 +655,21 @@ footer{
 }
 
 @media (max-width: 650px) {
+
+    article {
+            padding: 80px 5%;
+        }
+
+    .projectInfo{
+        padding: 80px 5%;
+    }
+
+        .projectInfo .row ul li {
+            font-size: 0.8rem;
+        }
+        .projectInfo h2 {
+            font-size: 2rem;
+        }
     .welcomeArticle figure{
         display: none;
     }
